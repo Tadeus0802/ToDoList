@@ -9,7 +9,8 @@
     color: white;
     width: 40%;
     height: 61%;
-    border-radius: 5%;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
 }
 
 form{
@@ -72,6 +73,20 @@ body{
     background-image: url(todolistback.jpg);
 }
 
+.pie{
+    display: block;
+    position: absolute;
+    top: 92%;
+    left: 32%;
+    background-color: rgb(25, 25, 48);
+    color: white;
+    width: 40%;
+    height: 7%;
+    text-align: center;
+    font-family: 'Josefin Sans';
+    font-size: 20px;
+}
+
 h1{
     position: absolute;
     top: 12%;
@@ -94,4 +109,7 @@ h1{
 button{
     background-color: inherit;
     border: none;
+    color: white;
+    font-family: 'Josefin Sans';
+    font-size: 20px;
 }

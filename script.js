@@ -1,30 +1,37 @@
+
 const btn = document.getElementById("btn");
 const input = document.getElementById("input");
 const list = document.getElementById("list");
 var aux = "";
+var aux2 = '';
+const parrafo = document.querySelector("p");
+let getlocal = localStorage.getItem("todo")
 
-// Mostrar();
-
-
-btn.onclick = (e)=>{
+btn.addEventListener("click",(e)=>{
   aux = input.value;
-  let getlocal = localStorage.getItem("todo")
-  if(getlocal==null){
-    arr = [];
+  if(aux!=""){
+    if(getlocal==null){
+      arr = [];
+    }
+    else{
+      arr = JSON.parse(getlocal);
+    }
+    input.value='';
+    arr.push(aux);
+    localStorage.setItem("todo",JSON.stringify(arr));
+    parrafo.innerHTML=`You have ${JSON.parse(getlocal).length} ToDo's`;
   }
-  else{
-    arr = JSON.parse(getlocal);
-  }
-  input.value='';
-  arr.push(aux);
-  localStorage.setItem("todo",JSON.stringify(arr));
-
-};
+  else if(aux==""){
+    e.preventDefault();
+    Swal.fire({
+      title: "You haven't enter a word",
+    })
+  }  
+});
 
 Mostrar();
 
 function Mostrar(){
-  let getlocal = localStorage.getItem("todo");
   if(getlocal==null){
     arr = [];
   }
@@ -48,21 +55,39 @@ function Mostrar(){
   });
 };
 
-
-function Delete(index) {
+document.getElementById("Delete").addEventListener("click",function(e){
+  e.preventDefault()
   Swal.fire({
-    title: 'Queres eliminar la tarea?',
+    title: 'You want to delete all tasks?',
     showCancelButton: true,
     confirmButtonText: `Eliminar`,
     denyButtonText: `Canelar`,
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.clear();
+      Swal.fire('Deleted!')
+      setTimeout(Espera, 500)
+    } 
+  })
+})
+
+document.addEventListener("DOMContentLoaded", function(){
+  parrafo.innerHTML=`You have ${JSON.parse(getlocal).length} ToDo's`;
+})
+
+function Delete(index) {
+  Swal.fire({
+    title: 'You want to delete this task?',
+    showCancelButton: true,
+    confirmButtonText: `Delete`,
+    denyButtonText: `Cancel`,
   }).then((result) => {
     if (result.isConfirmed) {
       let getlocal = localStorage.getItem("todo");
       arr = JSON.parse(getlocal);
       arr.splice(index,1)
       localStorage.setItem("todo",JSON.stringify(arr));
-      Mostrar();
-      Swal.fire('Eliminado!')
+      Swal.fire('Deleted!')
       setTimeout(Espera, 500)
     } 
   })
