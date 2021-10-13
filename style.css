@@ -125,7 +125,7 @@
         overflow: scroll;
         overflow-x:hidden;
         display: block;
-        position: absolute;
+        position: fixed;
         top: 31%;
         left: 10%;
         background-color: rgb(37, 39, 60);
@@ -148,7 +148,7 @@
     /* CLASES */
     .pie{
         display: block;
-        position: absolute;
+        position: fixed;
         top: 81%;
         left: 10%;
         background-color: rgb(25, 25, 48);
@@ -161,7 +161,7 @@
     }
 
     .form{
-        position: absolute;
+        position: fixed;
         display: block;
         top: 20%;
         left: 20%;
@@ -172,7 +172,7 @@
     }
 
     .btn{
-        position:absolute;
+        position:fixed;
         right: 0px;
     }
 
@@ -196,7 +196,7 @@
     }
 
     h1{
-        position: absolute;
+        position: fixed;
         top: 8%;
         left: 20%;
         color: white;
