@@ -118,6 +118,7 @@
     }
 }
 
+
 @media (max-width:768px){
     /* ID'S */
     #show-list{
@@ -190,12 +191,12 @@
         align-items: center;
         margin-top: 3%;
         margin-right: 20%;
-        display: block;
+        /* display: block; */
     }
 
     h1{
         position: absolute;
-        top: 9%;
+        top: 8%;
         left: 20%;
         color: white;
         font-family: 'Josefin Sans';
