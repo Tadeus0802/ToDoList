@@ -3,7 +3,7 @@
     #show-list{
         overflow: scroll;
         overflow-x:hidden;
-        display: block;
+        display: inline-block;
         position: absolute;
         top: 31%;
         left: 32%;
@@ -26,7 +26,7 @@
 
     /* CLASES */
     .pie{
-        display: block;
+        display: inline-block;
         position: absolute;
         top: 92%;
         left: 32%;
@@ -40,6 +40,7 @@
     }
     
     .form{
+        display: inline-block;
         position: absolute;
         top: 20%;
         left: 40%;
@@ -47,11 +48,6 @@
         width: 20%;
         height: 7%;
         border-radius: 15px;
-    }
-    
-    .btn{
-        position:absolute;
-        right: 0px;
     }
 
     /* NORMAL HTML TAGS */
@@ -125,7 +121,7 @@
         overflow: scroll;
         overflow-x:hidden;
         display: block;
-        position: fixed;
+        position: absolute;
         top: 31%;
         left: 10%;
         background-color: rgb(37, 39, 60);
@@ -148,7 +144,7 @@
     /* CLASES */
     .pie{
         display: block;
-        position: fixed;
+        position: absolute;
         top: 81%;
         left: 10%;
         background-color: rgb(25, 25, 48);
@@ -161,7 +157,7 @@
     }
 
     .form{
-        position: fixed;
+        position: absolute;
         display: block;
         top: 20%;
         left: 20%;
@@ -172,7 +168,7 @@
     }
 
     .btn{
-        position:fixed;
+        position:absolute;
         right: 0px;
     }
 
@@ -187,16 +183,16 @@
     }
 
     form{
-        display: flex;
+        display: block;
         justify-content: center;
         align-items: center;
         margin-top: 3%;
         margin-right: 20%;
-        display: block;
     }
 
     h1{
-        position: fixed;
+        display: block;
+        position: absolute;
         top: 8%;
         left: 20%;
         color: white;
